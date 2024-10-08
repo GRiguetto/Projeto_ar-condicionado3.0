@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto_ar-condicionado", "Projeto_ar-condicionado\Projeto_ar-condicionado.csproj", "{C62C0E55-F0F8-4B83-8B05-55C2B7FAA2EC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{B91C71F7-1A1B-4D5E-B8D1-6BBF848893EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{54BE78D6-1FFE-434E-88B4-C301FFCA60E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +17,10 @@ Global
 		{C62C0E55-F0F8-4B83-8B05-55C2B7FAA2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C62C0E55-F0F8-4B83-8B05-55C2B7FAA2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C62C0E55-F0F8-4B83-8B05-55C2B7FAA2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BE78D6-1FFE-434E-88B4-C301FFCA60E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BE78D6-1FFE-434E-88B4-C301FFCA60E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BE78D6-1FFE-434E-88B4-C301FFCA60E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BE78D6-1FFE-434E-88B4-C301FFCA60E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

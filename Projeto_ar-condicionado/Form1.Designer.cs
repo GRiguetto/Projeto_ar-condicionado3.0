@@ -57,13 +57,13 @@
             this.txb_nome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage_consulta = new System.Windows.Forms.TabPage();
-            this.btn_fechar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_buscar_cadastro = new System.Windows.Forms.Button();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.txb_buscar_cadastro = new System.Windows.Forms.TextBox();
             this.comboBox_buscar_tipo = new System.Windows.Forms.ComboBox();
+            this.txb_buscar_cadastro = new System.Windows.Forms.TextBox();
+            this.btn_excluir = new System.Windows.Forms.Button();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_buscar_cadastro = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_fechar = new System.Windows.Forms.Button();
             this.tabControl_busca.SuspendLayout();
             this.tabPage_cadastro.SuspendLayout();
             this.groupBox_endereço.SuspendLayout();
@@ -342,6 +342,7 @@
             this.comboBox_tipo.Name = "comboBox_tipo";
             this.comboBox_tipo.Size = new System.Drawing.Size(121, 28);
             this.comboBox_tipo.TabIndex = 3;
+            this.comboBox_tipo.SelectedIndexChanged += new System.EventHandler(this.comboBox_tipo_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -388,58 +389,6 @@
             this.tabPage_consulta.Text = "Consultar cadastros";
             this.tabPage_consulta.UseVisualStyleBackColor = true;
             // 
-            // btn_fechar
-            // 
-            this.btn_fechar.Location = new System.Drawing.Point(576, 437);
-            this.btn_fechar.Name = "btn_fechar";
-            this.btn_fechar.Size = new System.Drawing.Size(75, 23);
-            this.btn_fechar.TabIndex = 13;
-            this.btn_fechar.Text = "Fechar";
-            this.btn_fechar.UseVisualStyleBackColor = true;
-            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(635, 325);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // btn_buscar_cadastro
-            // 
-            this.btn_buscar_cadastro.Location = new System.Drawing.Point(550, 43);
-            this.btn_buscar_cadastro.Name = "btn_buscar_cadastro";
-            this.btn_buscar_cadastro.Size = new System.Drawing.Size(75, 23);
-            this.btn_buscar_cadastro.TabIndex = 1;
-            this.btn_buscar_cadastro.Text = "Buscar";
-            this.btn_buscar_cadastro.UseVisualStyleBackColor = true;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Location = new System.Drawing.Point(6, 42);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(94, 23);
-            this.btn_editar.TabIndex = 2;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
-            // 
-            // btn_excluir
-            // 
-            this.btn_excluir.Location = new System.Drawing.Point(6, 13);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(94, 23);
-            this.btn_excluir.TabIndex = 4;
-            this.btn_excluir.Text = "Excluir";
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            // 
-            // txb_buscar_cadastro
-            // 
-            this.txb_buscar_cadastro.Location = new System.Drawing.Point(177, 45);
-            this.txb_buscar_cadastro.Name = "txb_buscar_cadastro";
-            this.txb_buscar_cadastro.Size = new System.Drawing.Size(367, 20);
-            this.txb_buscar_cadastro.TabIndex = 5;
-            // 
             // comboBox_buscar_tipo
             // 
             this.comboBox_buscar_tipo.FormattingEnabled = true;
@@ -450,6 +399,58 @@
             this.comboBox_buscar_tipo.Name = "comboBox_buscar_tipo";
             this.comboBox_buscar_tipo.Size = new System.Drawing.Size(121, 21);
             this.comboBox_buscar_tipo.TabIndex = 6;
+            // 
+            // txb_buscar_cadastro
+            // 
+            this.txb_buscar_cadastro.Location = new System.Drawing.Point(177, 45);
+            this.txb_buscar_cadastro.Name = "txb_buscar_cadastro";
+            this.txb_buscar_cadastro.Size = new System.Drawing.Size(367, 20);
+            this.txb_buscar_cadastro.TabIndex = 5;
+            // 
+            // btn_excluir
+            // 
+            this.btn_excluir.Location = new System.Drawing.Point(6, 13);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(94, 23);
+            this.btn_excluir.TabIndex = 4;
+            this.btn_excluir.Text = "Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(6, 42);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(94, 23);
+            this.btn_editar.TabIndex = 2;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            // 
+            // btn_buscar_cadastro
+            // 
+            this.btn_buscar_cadastro.Location = new System.Drawing.Point(550, 43);
+            this.btn_buscar_cadastro.Name = "btn_buscar_cadastro";
+            this.btn_buscar_cadastro.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscar_cadastro.TabIndex = 1;
+            this.btn_buscar_cadastro.Text = "Buscar";
+            this.btn_buscar_cadastro.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 72);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(635, 325);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // btn_fechar
+            // 
+            this.btn_fechar.Location = new System.Drawing.Point(576, 437);
+            this.btn_fechar.Name = "btn_fechar";
+            this.btn_fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_fechar.TabIndex = 13;
+            this.btn_fechar.Text = "Fechar";
+            this.btn_fechar.UseVisualStyleBackColor = true;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
             // frm_cadastro_busca
             // 

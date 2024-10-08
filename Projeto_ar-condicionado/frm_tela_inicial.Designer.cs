@@ -45,22 +45,22 @@
             this.cadastroDeServiçoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(750, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1384, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cadastroDePessoasToolStripMenuItem
             // 
             this.cadastroDePessoasToolStripMenuItem.Name = "cadastroDePessoasToolStripMenuItem";
-            this.cadastroDePessoasToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
-            this.cadastroDePessoasToolStripMenuItem.Text = "Cadastro de pessoas";
+            this.cadastroDePessoasToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
+            this.cadastroDePessoasToolStripMenuItem.Text = "Cadastros de pessoas";
             this.cadastroDePessoasToolStripMenuItem.Click += new System.EventHandler(this.cadastroDePessoasToolStripMenuItem_Click);
             // 
             // cadastroDeServiçoToolStripMenuItem
             // 
             this.cadastroDeServiçoToolStripMenuItem.Name = "cadastroDeServiçoToolStripMenuItem";
-            this.cadastroDeServiçoToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
-            this.cadastroDeServiçoToolStripMenuItem.Text = "Cadastro de serviço";
+            this.cadastroDeServiçoToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.cadastroDeServiçoToolStripMenuItem.Text = "Serviços e Contratos";
             this.cadastroDeServiçoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeServiçoToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
@@ -71,9 +71,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Projeto_ar_condicionado.Properties.Resources.ar_ecologico_ar_condicionado_logo_sem_fundo_;
-            this.pictureBox1.Location = new System.Drawing.Point(75, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(281, 172);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(594, 413);
+            this.pictureBox1.Size = new System.Drawing.Size(814, 523);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(750, 450);
+            this.ClientSize = new System.Drawing.Size(1384, 861);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;

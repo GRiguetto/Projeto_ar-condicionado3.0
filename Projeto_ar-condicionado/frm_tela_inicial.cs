@@ -27,7 +27,7 @@ namespace Projeto_ar_condicionado
 
         private void cadastroDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm_servico = new frm_servico();
+            var frm_servico = new frm_servico_contrato();
             frm_servico.Show();
         }
     }
