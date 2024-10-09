@@ -1,34 +1,50 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Projeto_ar_condicionado
 {
-    public partial class frm_cadastro_busca : Form
+    public partial class form1 : Form
     {
         string _conexao = Projeto_ar_condicionado.Properties.Settings.Default.conexao;
 
-        public frm_cadastro_busca()
+        public form1()
         {
             InitializeComponent();
-            ListarCliente();
+            ListarClientes();
+            ConfigurarDataGrid();
 
         }
 
 
-        private void ListarCliente()
+        private void ListarClientes()
         {
-            
+            ClienteCRUD clientecrud = new ClienteCRUD(_conexao);
+
+            string busca = txb_buscar_cadastro.Text.ToString();
+            DataSet dsCliente = new DataSet();
+            dsCliente = clientecrud.BuscarCliente(busca);
         }
 
-       //------------------------------------------------------------//
-       //focus
+       
+
+
+
+
+
+
+        //------------------------------------------------------------//
+        //focus
 
         private void txb_nome_KeyDown(object sender, KeyEventArgs e)
         {
@@ -110,7 +126,8 @@ namespace Projeto_ar_condicionado
 
         private void button2_Click(object sender, EventArgs e)
         {
-           if((txb_nome.Text=="") || (comboBox_tipo.Text=="") || (maskedTextBox_numero.Text == "" ) 
+
+            if ((txb_nome.Text=="") || (comboBox_tipo.Text=="") || (maskedTextBox_numero.Text == "" ) 
               || (maskedTextBox_telefone.Text=="") || (maskedTextBox_cpf.Text=="") || (txb_gmail.Text=="") 
               || (txb_rua.Text=="") || (txb_bairro.Text == "")|| (txb_cidade.Text== "")) 
            {                             
@@ -217,6 +234,81 @@ namespace Projeto_ar_condicionado
                 maskedTextBox_numero.ReadOnly = false;
                 maskedTextBox_numero.BackColor = Color.White;
             }
+        }
+
+        private void btn_buscar_cadastro_Click(object sender, EventArgs e)
+        {
+            if (txb_buscar_cadastro.Text == "")
+            {
+                MessageBox.Show("digite algum nome", "erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txb_buscar_cadastro.Focus();
+                return;
+            }
+            ListarClientes();
+        }
+
+        private void ConfigurarDataGrid()
+        {
+            dgv_cliente.DefaultCellStyle.Font = new Font("Ariel", 9, FontStyle.Bold);
+            dgv_cliente.RowHeadersWidth = 25;
+
+            dgv_cliente.Columns["clienteID"].Visible = false;
+
+            dgv_cliente.Columns["endereco_cliente"].HeaderText = "Endereço";
+
+            dgv_cliente.Columns["teleone_cliente"].HeaderText = "Tel";
+
+            dgv_cliente.Columns["nome_cliente"].HeaderText = "Nome Completo";
+
+            dgv_cliente.Columns["cpf_cliente"].HeaderText ="CPF";
+
+            dgv_cliente.Columns["gmail_cliente"].HeaderText= "Email";
+
+            dgv_cliente.Columns["CEP"].HeaderText = "CEP";
+
+            dgv_cliente.Columns["cidade_cliente"].HeaderText = "Cidade";
+
+            dgv_cliente.Columns["bairro"].HeaderText = "Bairro";
+
+            dgv_cliente.Columns["Numero_casa"].HeaderText = "Nº";
+
+            dgv_cliente.Columns["compelemento_cliente"].HeaderText = "Complemento";          
+
+        }
+
+        private void txb_buscar_cadastro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               btn_buscar_Click(sender, e);
+            }
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            if (dgv_cliente.SelectedRows.Count > 0)
+            {
+                int codigo = Convert.ToInt32(dgv_cliente.CurrentRow.Cells["clienteID"].Value);
+
+                var resultado = MessageBox.Show("Deseja Excluir Esse Registro?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    ClienteCRUD CliCrud = new ClienteCRUD(_conexao);
+                    CliCrud.ExcluirCliente(codigo);
+                    ListarClientes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selece um cadastro");
+            }
+
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

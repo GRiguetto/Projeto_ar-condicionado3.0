@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -46,6 +47,38 @@ namespace Data
                 throw new Exception("ERROOOO !!!!!!!", ex);
             }
         }
+
+        public DataSet BuscarCliente(string pesquisa = "")
+        {
+            const string query = "Select * From clientes Where nome_cliente Like @Pesquisa";
+
+            try
+            {
+                using (var conexaoBd = new SqlConnection(_conexao))
+
+                using (var comando = new SqlCommand(query, conexaoBd))
+
+                using (var adaptador = new SqlDataAdapter(comando))
+                {
+                    string parametroPesquisar = $"%{pesquisa}%";
+                    comando.Parameters.AddWithValue("@Pesquisa", parametroPesquisar);
+
+                    conexaoBd.Open();
+
+                    var dsClientes = new DataSet();
+                    adaptador.Fill(dsClientes, "clientes");
+                    return dsClientes;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro em buscar Clientes{ex.Message}", ex);
+            }
+        }
+
+
+
         public void ExcluirCliente (int codigocliente)
         {
             const string query = "DELETE FROM clientes WHERE clienteID =@codigoCliente";

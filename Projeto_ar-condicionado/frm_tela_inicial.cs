@@ -21,8 +21,8 @@ namespace Projeto_ar_condicionado
 
         private void cadastroDePessoasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm_cadastro_busca = new frm_cadastro_busca();          
-            frm_cadastro_busca.Show();
+            var form1 = new form1();          
+            form1.Show();
         }
 
         private void cadastroDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)

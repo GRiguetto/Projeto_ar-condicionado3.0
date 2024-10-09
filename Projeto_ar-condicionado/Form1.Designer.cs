@@ -1,6 +1,6 @@
 ﻿namespace Projeto_ar_condicionado
 {
-    partial class frm_cadastro_busca
+    partial class form1
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -62,13 +62,13 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_buscar_cadastro = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_cliente = new System.Windows.Forms.DataGridView();
             this.btn_fechar = new System.Windows.Forms.Button();
             this.tabControl_busca.SuspendLayout();
             this.tabPage_cadastro.SuspendLayout();
             this.groupBox_endereço.SuspendLayout();
             this.tabPage_consulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_busca
@@ -380,7 +380,7 @@
             this.tabPage_consulta.Controls.Add(this.btn_excluir);
             this.tabPage_consulta.Controls.Add(this.btn_editar);
             this.tabPage_consulta.Controls.Add(this.btn_buscar_cadastro);
-            this.tabPage_consulta.Controls.Add(this.dataGridView1);
+            this.tabPage_consulta.Controls.Add(this.dgv_cliente);
             this.tabPage_consulta.Location = new System.Drawing.Point(4, 22);
             this.tabPage_consulta.Name = "tabPage_consulta";
             this.tabPage_consulta.Padding = new System.Windows.Forms.Padding(3);
@@ -406,6 +406,7 @@
             this.txb_buscar_cadastro.Name = "txb_buscar_cadastro";
             this.txb_buscar_cadastro.Size = new System.Drawing.Size(367, 20);
             this.txb_buscar_cadastro.TabIndex = 5;
+            this.txb_buscar_cadastro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_buscar_cadastro_KeyDown);
             // 
             // btn_excluir
             // 
@@ -415,6 +416,7 @@
             this.btn_excluir.TabIndex = 4;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_editar
             // 
@@ -424,6 +426,7 @@
             this.btn_editar.TabIndex = 2;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_buscar_cadastro
             // 
@@ -433,14 +436,15 @@
             this.btn_buscar_cadastro.TabIndex = 1;
             this.btn_buscar_cadastro.Text = "Buscar";
             this.btn_buscar_cadastro.UseVisualStyleBackColor = true;
+            this.btn_buscar_cadastro.Click += new System.EventHandler(this.btn_buscar_cadastro_Click);
             // 
-            // dataGridView1
+            // dgv_cliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(635, 325);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cliente.Location = new System.Drawing.Point(0, 72);
+            this.dgv_cliente.Name = "dgv_cliente";
+            this.dgv_cliente.Size = new System.Drawing.Size(635, 325);
+            this.dgv_cliente.TabIndex = 0;
             // 
             // btn_fechar
             // 
@@ -452,7 +456,7 @@
             this.btn_fechar.UseVisualStyleBackColor = true;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
-            // frm_cadastro_busca
+            // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -460,7 +464,7 @@
             this.ClientSize = new System.Drawing.Size(679, 465);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.tabControl_busca);
-            this.Name = "frm_cadastro_busca";
+            this.Name = "form1";
             this.Text = "Ar Ecologico";
             this.Load += new System.EventHandler(this.frm_dastro_busca_Load);
             this.tabControl_busca.ResumeLayout(false);
@@ -470,7 +474,7 @@
             this.groupBox_endereço.PerformLayout();
             this.tabPage_consulta.ResumeLayout(false);
             this.tabPage_consulta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -510,7 +514,7 @@
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_buscar_cadastro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_cliente;
         private System.Windows.Forms.TextBox txb_buscar_cadastro;
         private System.Windows.Forms.ComboBox comboBox_buscar_tipo;
     }
